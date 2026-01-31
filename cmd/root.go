@@ -31,6 +31,14 @@ Examples:
   tokenizer -m gpt-4.1 -f prompt.md
   tokenizer --list`,
 	RunE: func(cmd *cobra.Command, args []string) error {
+		// If the first positional argument is a help request, show help
+		if len(args) > 0 {
+			if args[0] == "help" || args[0] == "-h" || args[0] == "--help" {
+				_ = cmd.Help()
+				return nil
+			}
+		}
+
 		// Handle --list flag
 		if listFlag {
 			printModelList()
