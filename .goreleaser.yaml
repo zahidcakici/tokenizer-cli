@@ -40,7 +40,7 @@ brews:
   - name: tokenizer
     repository:
       owner: zahidcakici
-      name: homebrew-tap
+      name: tokenizer-cli
       token: "{{ .Env.GITHUB_TOKEN }}"
     homepage: "https://github.com/zahidcakici/tokenizer-cli"
     description: "A fast CLI tool to count tokens for various Large Language Model (LLM) providers."
