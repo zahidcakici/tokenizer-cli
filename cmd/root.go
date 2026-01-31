@@ -31,6 +31,7 @@ Examples:
   tokenizer -f context.txt
   tokenizer -m gpt-4.1 -f prompt.md
   tokenizer --list`,
+	Args: cobra.ArbitraryArgs,
 	RunE: func(cmd *cobra.Command, args []string) error {
 		// If the first positional argument is a help request, show help
 		if len(args) > 0 {
@@ -152,9 +153,9 @@ func printResult(result *tokenizer.Result) {
 
 	// Print result box
 	fmt.Println()
-	headerColor.Println("╔══════════════════════════════════════════════════════╗")
-	headerColor.Println("║          🔢 TOKEN COUNT RESULT                      ║")
-	headerColor.Println("╚══════════════════════════════════════════════════════╝")
+	headerColor.Println("╔═══════════════════════════════════════╗")
+	headerColor.Println("║          TOKEN COUNT RESULT           ║")
+	headerColor.Println("╚═══════════════════════════════════════╝")
 	fmt.Println()
 
 	// Model information
