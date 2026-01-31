@@ -41,9 +41,9 @@ brews:
     repository:
       owner: zahidcakici
       name: homebrew-tap
-      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+      token: "{{ .Env.GITHUB_TOKEN }}"
     homepage: "https://github.com/zahidcakici/tokenizer-cli"
-    description: "CLI tool to count tokens for LLM models (OpenAI, Claude, Gemini, Llama)"
+    description: "A fast CLI tool to count tokens for various Large Language Model (LLM) providers."
     license: "MIT"
     install: |
       bin.install "tokenizer"
