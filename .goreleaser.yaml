@@ -42,7 +42,6 @@ brews:
       owner: zahidcakici
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-    folder: Formula
     homepage: "https://github.com/zahidcakici/tokenizer-cli"
     description: "CLI tool to count tokens for LLM models (OpenAI, Claude, Gemini, Llama)"
     license: "MIT"
