@@ -12,9 +12,10 @@ import (
 )
 
 var (
-	filePath  string
-	modelName string
-	listFlag  bool
+	filePath    string
+	modelName   string
+	listFlag    bool
+	versionFlag bool
 )
 
 var rootCmd = &cobra.Command{
@@ -37,6 +38,13 @@ Examples:
 				_ = cmd.Help()
 				return nil
 			}
+		}
+
+		// Handle version flag early
+		if versionFlag {
+			// print plain version
+			fmt.Println(version)
+			return nil
 		}
 
 		// Handle --list flag
@@ -170,6 +178,7 @@ func init() {
 	rootCmd.Flags().StringVarP(&filePath, "file", "f", "", "Path to file to analyze")
 	rootCmd.Flags().StringVarP(&modelName, "model", "m", tokenizer.DefaultModel, "Model to use for tokenization")
 	rootCmd.Flags().BoolVarP(&listFlag, "list", "l", false, "List all supported models")
+	rootCmd.Flags().BoolVarP(&versionFlag, "version", "v", false, "Print version and exit")
 }
 
 // Execute runs the root command

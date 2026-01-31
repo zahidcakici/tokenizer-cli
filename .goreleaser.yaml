@@ -15,7 +15,7 @@ builds:
       - amd64
       - arm64
     ldflags:
-      - -s -w -X main.version={{.Version}}
+      - -s -w -X github.com/zahidcakici/tokenizer-cli/cmd.version={{.Version}}
     binary: tokenizer
 
 archives:
